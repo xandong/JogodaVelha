@@ -168,6 +168,7 @@ footer p{
 footer a{
     color: black;
     font-weight: bold;
+    text-indent: 0px;
     text-decoration: none;
     transition-delay: 0.2;
     transition-duration: 1s;
