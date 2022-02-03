@@ -1,0 +1,83 @@
+<!--/*FAZER UM EM JS
+PASSOS:
+- *sempre se ligar em responsiveness e style.
+- Single player
+- Multplayer local
+- Multplayer online
+    
+
+*Depois saber como fazer para Mobile com JS.   
+
+
+*** marketing ***
+- Fazer viralizar como meme
+- Patrocinar influencers IG/TWITCH/YT
+
+*** publicidade ***
+- anuncio no rodapé
+- assistir um anuncio = 10min livre no jogo. assistir 3(max) anuncios seguidos = 45min. +3 ads = 60min. limite de hrs = 5/d.
+- *comprar VIP anual = 1 dolar = sem anuncios
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Velha</title>
+    <link rel="shortcut icon" href="older-adult.ico" type="image/x-icon">
+    <link rel="stylesheet" href="game.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onselectstart="return false">
+    <header>
+        <h1>Jogo da Velha <div class="rotate">&#x1F9D3;</div></h1>
+    </header>
+    <nav class="nav-menu">
+        <a class="nav-item" href="index.html">Home</a>
+        <a class="nav-item" href="#">1P</a>
+        <a class="nav-item" href="#">2P local</a>
+        <a class="nav-item" href="#">2P online</a>
+        <a class="nav-item" href="conta.html">Conta</a>
+    </nav>
+    <main>
+        <!--    contador de click (impar par)
+                
+                click():
+                aux = true
+                check aux == true
+                return aux
+
+                x = aux == true
+                    print(x)
+                    aux == false
+
+                o = aux == false
+                    print(o)
+                    aux == true
+
+        -->
+        <div class="div-main">
+            <div class="div-out">
+                <div class="div-in"><p class="elemento"></p></div>
+                <div class="div-in"><p class="elemento"></p></div>
+                <div class="div-in"><p class="elemento"></p></div>
+            </div>
+            <div class="div-out">
+                <div class="div-in-2"><p class="elemento"></p></div>
+                <div class="div-in-2"><p class="elemento"></p></div>
+                <div class="div-in-2"><p class="elemento"></p></div>
+            </div>
+            <div class="div-out">
+                <div class="div-in-3"><p class="elemento"></p></div>
+                <div class="div-in-3"><p class="elemento"></p></div>
+                <div class="div-in-3"><p class="elemento"></p></div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>Desenvolvido por <a href="https://github.com/xandong">Alexandre Gurgel</a>.</p>
+    </footer>
+</body>
+</html>

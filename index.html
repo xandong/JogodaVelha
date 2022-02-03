@@ -1,0 +1,64 @@
+<!--/*FAZER UM EM JS
+PASSOS:
+- *sempre se ligar em responsiveness e style.
+- Single player
+- Multplayer local
+- Multplayer online
+    
+
+*Depois saber como fazer para Mobile com JS.   
+
+
+*** marketing ***
+- Fazer viralizar como meme
+- Patrocinar influencers IG/TWITCH/YT
+
+*** publicidade ***
+- anuncio no rodapé
+- assistir um anuncio = 10min livre no jogo. assistir 3(max) anuncios seguidos = 45min. +3 ads = 60min. limite de hrs = 5/d.
+- *comprar VIP anual = 1 dolar = sem anuncios
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rules: Jogo da Velha</title>
+    <link rel="shortcut icon" href="older-adult.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onselectstart="return false">
+    <header>
+        <h1>Jogo da Velha <div class="rotate">&#x1F9D3;</div></h1>
+    </header>
+    <nav class="nav-menu">
+        <a class="nav-item" href="#">Home</a>
+        <a class="nav-item" href="game.html">1P</a>
+        <a class="nav-item" href="game.html">2P local</a>
+        <a class="nav-item" href="game.html">2P online</a>
+        <a class="nav-item" href="conta.html">Conta</a>
+    </nav>
+    <main>
+        <section>
+        <div class="div-main">
+            <h3>Bem vindo ao Jogo da Velha!</h3>
+            <p>Acredito que saiba as regras, mas irei explicar mesmo assim! hahaha</p>
+            <p>Em um tabuleiro de 9 casas(3x3), vence quem preencher uma linha reta de 3 casa consecutivas, seja na horizontal, vertical ou diagonal.</p>
+            <div id="div-btt-start"><a id="start" href="game.html">Começar</a></div>
+        </div>
+        </section>
+    </main>
+    <footer>
+        <p>Desenvolvido por <a href="https://github.com/xandong">Alexandre Gurgel</a>.</p>
+        <p class="hora"></p>
+    </footer>
+    <script>
+        let horario = new Date()
+        let agora = `${horario.getHours()}:${horario.getMinutes()}:${horario.getSeconds()}`
+        document.getElementById('hora') = console.log(agora) 
+        document.write.getElementById('hora').console.log(agora)
+    </script>
+</body>
+</html>
