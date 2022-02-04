@@ -34,12 +34,11 @@ header{
 }
 h1{ 
     margin: auto;
-    width: 500px;
-    padding: 10px;
+    width: 100%;
+    padding: 10px 0 10px 0;
     text-align: center;
     font-family: monospace;
     font-size: 3.5em;
-    border-radius: 40px;
     transition-delay: 0.2s;
     transition-duration: 0.5s;
 }
