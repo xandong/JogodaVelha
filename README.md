@@ -1,2 +1,2 @@
 # jogo-da-velha
- Jogo da Velha: https://xandong.github.io/jogodavelha/
+ github Pages: https://xandong.github.io/jogodavelha/
