@@ -21,44 +21,55 @@ PASSOS:
 
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rules: Jogo da Velha</title>
-    <link rel="shortcut icon" href="older-adult.ico" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body onselectstart="return false">
+    <link rel="shortcut icon" href="img/older-adult.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/script.js" async></script>
+  </head>
+  <body>
     <header>
-        <h1>Jogo da Velha <div class="rotate">&#x1F9D3;</div></h1>
+      <h1>
+        Jogo da Velha
+        <div class="rotate">&#x1F9D3;</div>
+      </h1>
     </header>
     <nav class="nav-menu">
-        <a class="nav-item" href="#">Home</a>
-        <a class="nav-item" href="game.html">1P</a>
-        <a class="nav-item" href="game.html">2P local</a>
-        <a class="nav-item" href="game.html">2P online</a>
-        <a class="nav-item" href="conta.html">Conta</a>
+      <a class="nav-item" href="#">Home</a>
+      <a class="nav-item" href="pages/game.html">Game</a>
+      <a class="nav-item" href="pages/conta.html">Conta</a>
     </nav>
     <main>
-        <section>
+      <section>
         <div class="div-main">
-            <h3>Bem vindo ao Jogo da Velha!</h3>
-            <p>Acredito que saiba as regras, mas irei explicar mesmo assim! hahaha</p>
-            <p>Em um tabuleiro de 9 casas(3x3), vence quem preencher uma linha reta de 3 casa consecutivas, seja na horizontal, vertical ou diagonal.</p>
-            <div id="div-btt-start"><a id="start" href="game.html">Começar</a></div>
+          <h3>Bem vindo ao Jogo da Velha!</h3>
+          <div id="welcome">
+            <p>
+              Acredito que saiba as regras, mas irei explicar mesmo assim!
+              hahaha
+            </p>
+            <p>
+              Em um tabuleiro de 9 casas(3x3), vence quem preencher uma linha
+              reta de 3 casa consecutivas, seja na horizontal, vertical ou
+              diagonal.
+            </p>
+          </div>
+          <div id="div-btt-start">
+            <a id="start" href="pages/game.html">Começar</a>
+          </div>
         </div>
-        </section>
+      </section>
     </main>
     <footer>
-        <p>Desenvolvido por <a href="https://github.com/xandong" target="_blank">Alexandre Gurgel</a>.</p>
-        <p class="hora"></p>
+      <p>
+        Desenvolvido por
+        <a href="https://github.com/xandong" target="_blank">Alexandre Gurgel</a
+        >.
+      </p>
+      <p class="hora"></p>
     </footer>
-    <script>
-        let horario = new Date()
-        let agora = `${horario.getHours()}:${horario.getMinutes()}:${horario.getSeconds()}`
-        document.getElementById('hora') = console.log(agora) 
-        document.write.getElementById('hora').console.log(agora)
-    </script>
-</body>
+  </body>
 </html>
