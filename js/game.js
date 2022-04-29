@@ -1,6 +1,7 @@
 const boxes = document.querySelectorAll(".div-in");
 
 let isPlayerOne = true,
+  haveWinner = false,
   round = 0,
   combinacoes = [
     [0, 1, 2],
@@ -40,7 +41,7 @@ function validationsWinner() {
       boxes[combinacao[0]].innerHTML === boxes[combinacao[2]].innerHTML
     ) {
       addWinner(combinacao);
-      stopGame();
+      haveWinner = true;
     }
   });
 }
@@ -51,18 +52,17 @@ function addWinner(args) {
   });
 }
 
-function stopGame() {
-  // A SER IMPLEMENTADDA
-}
-
 function reset() {
   boxes.forEach((box) => {
     box.innerHTML = "";
     box.classList.remove("winner");
   });
   round = 0;
+  haveWinner = false;
 }
 
 boxes.forEach((box) => {
-  box.addEventListener("click", game, false);
+  if (!haveWinner) {
+    box.addEventListener("click", game, false);
+  }
 });
