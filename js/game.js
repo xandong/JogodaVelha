@@ -1,8 +1,12 @@
 const boxes = document.querySelectorAll(".div-in");
+const getPlayer = document.getElementById("player");
+const getPlacar = document.getElementById("placar");
 
 let isPlayerOne = true,
   haveWinner = false,
   round = 0,
+  player = "X",
+  placar = [0, 0],
   combinacoes = [
     [0, 1, 2],
     [3, 4, 5],
@@ -20,6 +24,7 @@ function game() {
 
     let box = event.currentTarget;
     validationsPlayer(box);
+    setPlayer();
 
     if (round > 3) {
       validationsWinner();
@@ -29,9 +34,18 @@ function game() {
 
 function validationsPlayer(box) {
   if (box.innerHTML === "") {
-    box.innerHTML = `${isPlayerOne ? "X" : "O"}`;
+    box.innerHTML = player;
     isPlayerOne = !isPlayerOne;
   }
+}
+
+function setPlayer() {
+  if (isPlayerOne) {
+    player = "X";
+  } else {
+    player = "O";
+  }
+  getPlayer.innerHTML = `Quem joga: ${player}`;
 }
 
 function validationsWinner() {
@@ -43,9 +57,15 @@ function validationsWinner() {
       boxes[combinacao[0]].innerHTML === boxes[combinacao[2]].innerHTML
     ) {
       addWinner(combinacao);
+      setPlacar();
       haveWinner = true;
     }
   });
+}
+
+function setPlacar() {
+  player !== "X" ? placar[0]++ : placar[1]++;
+  getPlacar.innerHTML = `Placar: X -> ${placar[0]}   |  O -> ${placar[1]}`;
 }
 
 function addWinner(args) {

@@ -28,7 +28,7 @@
 body {
   font-family: "Roboto";
   width: 100vw;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   background-color: whitesmoke;
 }
 header {
@@ -40,7 +40,7 @@ h1 {
   margin: auto;
   padding: 10px 0 10px 0;
   text-align: center;
-  font-size: 3em;
+  font-size: 2.5em;
   transition-delay: 0.2s;
   transition-duration: 0.5s;
 }
@@ -81,9 +81,7 @@ nav > a:hover {
 }
 main {
   background-color: blue;
-  min-height: 350px;
   height: 450px;
-  min-width: 350px;
   width: 450px;
   margin: 0 auto;
   border-radius: 20px;

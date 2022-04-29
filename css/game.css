@@ -1,9 +1,12 @@
 @charset "UTF-8";
 
-#btn {
-  width: 100%;
+#info-top {
+  width: 500px;
+  max-width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
+  gap: 16px;
 }
 #reset {
   margin: 0 auto;
@@ -70,4 +73,47 @@
 }
 #div-btt-start {
   text-align: center;
+}
+@media (max-width: 600px) {
+  #info-top {
+    width: 360px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  main {
+    height: 360px;
+    width: 360px;
+  }
+  .elemento {
+    font-size: 6em;
+  }
+  .div-main {
+    height: 360px;
+    width: 360px;
+  }
+  .div-in {
+    width: 110px;
+    height: 110px;
+  }
+}
+
+@media (max-width: 400px) {
+  h1 {
+    font-size: 2em;
+  }
+  main {
+    height: 300px;
+    width: 300px;
+  }
+  .elemento {
+    font-size: 5em;
+  }
+  .div-main {
+    height: 300px;
+    width: 300px;
+  }
+  .div-in {
+    width: 90px;
+    height: 90px;
+  }
 }
