@@ -15,13 +15,15 @@ let isPlayerOne = true,
   ];
 
 function game() {
-  round++;
+  if (!haveWinner) {
+    round++;
 
-  let box = event.currentTarget;
-  validationsPlayer(box);
+    let box = event.currentTarget;
+    validationsPlayer(box);
 
-  if (round > 3) {
-    validationsWinner();
+    if (round > 3) {
+      validationsWinner();
+    }
   }
 }
 
@@ -62,7 +64,5 @@ function reset() {
 }
 
 boxes.forEach((box) => {
-  if (!haveWinner) {
-    box.addEventListener("click", game, false);
-  }
+  box.addEventListener("click", game, false);
 });
