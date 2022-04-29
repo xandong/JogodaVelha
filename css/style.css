@@ -28,7 +28,7 @@
 body {
   font-family: "Roboto";
   width: 100vw;
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
   background-color: whitesmoke;
 }
 header {
