@@ -83,6 +83,7 @@ main {
   background-color: blue;
   height: 450px;
   width: 450px;
+  max-width: 95%;
   margin: 0 auto;
   border-radius: 20px;
   transition-duration: 5s;
@@ -172,4 +173,37 @@ footer a {
 footer a:hover {
   transition-duration: 0.5s;
   color: blue;
+}
+
+@media (max-width: 600px) {
+  main {
+    height: 360px;
+    width: 360px;
+  }
+  h3 {
+    padding-top: 24px;
+  }
+  #welcome {
+    gap: 12px;
+  }
+  #welcome p {
+    font-size: 1em;
+    margin: 12px 24px;
+  }
+}
+
+@media (max-width: 400px) {
+  h1 {
+    font-size: 2em;
+  }
+  main {
+    height: 300px;
+    width: 300px;
+  }
+  h3 {
+    padding-top: 6px;
+  }
+  #welcome p {
+    margin: 6px 6px;
+  }
 }
