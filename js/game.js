@@ -39,7 +39,6 @@ function validationsWinner() {
       boxes[combinacao[0]].innerHTML === boxes[combinacao[1]].innerHTML &&
       boxes[combinacao[0]].innerHTML === boxes[combinacao[2]].innerHTML
     ) {
-      console.log(`Combinação valida: ${combinacao}`);
       addWinner(combinacao);
       stopGame();
     }
@@ -52,7 +51,9 @@ function addWinner(args) {
   });
 }
 
-function stopGame() {}
+function stopGame() {
+  // A SER IMPLEMENTADDA
+}
 
 function reset() {
   boxes.forEach((box) => {
