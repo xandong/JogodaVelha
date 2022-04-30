@@ -1,8 +1,7 @@
 const boxes = document.querySelectorAll(".div-in");
 const getPlayer = document.getElementById("player");
-const getPlacar = document.getElementById("placar");
 
-let isPlayerOne = true,
+let isPlayer = true,
   haveWinner = false,
   round = 0,
   player = "X",
@@ -19,58 +18,83 @@ let isPlayerOne = true,
   ];
 
 function game() {
-  if (!haveWinner) {
-    round++;
+  if (haveWinner) return;
+  let box = event.currentTarget;
+  validationsPlayer(box);
+  round++;
+}
 
-    let box = event.currentTarget;
-    validationsPlayer(box);
-    setPlayer();
-
-    if (round > 3) {
-      validationsWinner();
+async function validationsPlayer(box) {
+  if (isPlayer) {
+    if (box.innerHTML === "") {
+      box.innerHTML = "X";
+      getPlayer.innerHTML = `<strong>Robô 🤖<strong>`;
+      validationsWinner("Você ganhou!");
+      if (!haveWinner) {
+        setTimeout(() => {
+          botsTurn();
+          getPlayer.innerHTML = `<strong>Sua vez!<strong>`;
+          validationsWinner("O robô ganhou!");
+        }, 1500);
+      }
     }
   }
 }
 
-function validationsPlayer(box) {
-  if (box.innerHTML === "") {
-    box.innerHTML = player;
-    isPlayerOne = !isPlayerOne;
+function botsTurn() {
+  round++;
+  let numberRandom = parseInt(Math.random() * 9);
+  if (round > 3) {
+    combinacoes.forEach((combinacao) => {
+      if (
+        boxes[combinacao[0]].innerHTML === "O" &&
+        boxes[combinacao[0]].innerHTML === boxes[combinacao[1]].innerHTML
+      ) {
+        numberRandom = combinacao[2];
+      } else if (
+        boxes[combinacao[0]].innerHTML === "O" &&
+        boxes[combinacao[0]].innerHTML === boxes[combinacao[2]].innerHTML
+      ) {
+        numberRandom = combinacao[1];
+      } else if (
+        boxes[combinacao[1]].innerHTML === "O" &&
+        boxes[combinacao[1]].innerHTML === boxes[combinacao[2]].innerHTML
+      ) {
+        numberRandom = combinacao[0];
+      } else {
+      }
+    });
   }
-}
-
-function setPlayer() {
-  if (isPlayerOne) {
-    player = "X";
+  if (boxes[numberRandom].innerHTML === "") {
+    boxes[numberRandom].innerHTML = "O";
   } else {
-    player = "O";
+    let auxParada = true;
+    boxes.forEach((box) => {
+      if (box.innerHTML === "" && auxParada) {
+        box.innerHTML = "O";
+        auxParada = false;
+      }
+    });
   }
-  getPlayer.innerHTML = `Quem joga: ${player}`;
-}
-
-function validationsWinner() {
-  combinacoes.forEach((combinacao) => {
-    console.log(combinacao);
-    if (
-      boxes[combinacao[0]].innerHTML !== "" &&
-      boxes[combinacao[0]].innerHTML === boxes[combinacao[1]].innerHTML &&
-      boxes[combinacao[0]].innerHTML === boxes[combinacao[2]].innerHTML
-    ) {
-      addWinner(combinacao);
-      setPlacar();
-      haveWinner = true;
-    }
-  });
-}
-
-function setPlacar() {
-  player !== "X" ? placar[0]++ : placar[1]++;
-  getPlacar.innerHTML = `Placar: X -> ${placar[0]}   |  O -> ${placar[1]}`;
 }
 
 function addWinner(args) {
   args.forEach((arg) => {
     boxes[arg].classList.add("winner");
+  });
+}
+
+function validationsWinner(ganhador) {
+  combinacoes.forEach((combinacao) => {
+    if (
+      boxes[combinacao[0]].innerHTML !== "" &&
+      boxes[combinacao[0]].innerHTML === boxes[combinacao[1]].innerHTML &&
+      boxes[combinacao[0]].innerHTML === boxes[combinacao[2]].innerHTML
+    ) {
+      getPlayer.innerHTML = `<strong>${ganhador}<strong>`;
+      addWinner(combinacao);
+      haveWinner = true;
+    }
   });
 }
 
@@ -81,6 +105,7 @@ function reset() {
   });
   round = 0;
   haveWinner = false;
+  getPlayer.innerHTML = `<strong>Sua vez!<strong>`;
 }
 
 boxes.forEach((box) => {
