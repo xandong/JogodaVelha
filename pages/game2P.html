@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jogo da Velha</title>
+    <link
+      rel="shortcut icon"
+      href="../img/older-adult.ico"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/game.css" />
+    <script src="../js/game2P.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>
+        Jogo da Velha
+        <div class="rotate">&#x1F9D3;</div>
+      </h1>
+    </header>
+    <nav class="nav-menu">
+      <a class="nav-item" href="../index.html">Home</a>
+      <a class="nav-item" href="game.html">1 P</a>
+      <a class="nav-item active" href="#">2 P</a>
+      <a class="nav-item" href="conta.html">Conta</a>
+    </nav>
+    <div id="info-top">
+      <p><strong id="player">Quem joga: X</strong></p>
+      <p><strong id="placar">Placar:| X => 0 | O => 0 |</strong></p>
+      <button id="reset" onclick="reset()">Resetar</button>
+    </div>
+    <main>
+      <div class="div-main">
+        <div class="div-out">
+          <div id="1" class="div-in elemento"></div>
+          <div id="2" class="div-in elemento"></div>
+          <div id="3" class="div-in elemento"></div>
+        </div>
+        <div class="div-out">
+          <div id="4" class="div-in elemento"></div>
+          <div id="5" class="div-in elemento"></div>
+          <div id="6" class="div-in elemento"></div>
+        </div>
+        <div class="div-out">
+          <div id="7" class="div-in elemento"></div>
+          <div id="8" class="div-in elemento"></div>
+          <div id="9" class="div-in elemento"></div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p>
+        Desenvolvido por
+        <a href="https://github.com/xandong" target="_blank">Alexandre Gurgel</a
+        >.
+      </p>
+    </footer>
+  </body>
+</html>
