@@ -44,24 +44,23 @@ async function validationsPlayer(box) {
 function botsTurn() {
   round++;
   let numberRandom = parseInt(Math.random() * 9);
-  if (round > 3) {
+  if (round > 2) {
     combinacoes.forEach((combinacao) => {
       if (
-        boxes[combinacao[0]].innerHTML === "O" &&
+        boxes[combinacao[0]].innerHTML !== "" &&
         boxes[combinacao[0]].innerHTML === boxes[combinacao[1]].innerHTML
       ) {
         numberRandom = combinacao[2];
       } else if (
-        boxes[combinacao[0]].innerHTML === "O" &&
+        boxes[combinacao[0]].innerHTML !== "" &&
         boxes[combinacao[0]].innerHTML === boxes[combinacao[2]].innerHTML
       ) {
         numberRandom = combinacao[1];
       } else if (
-        boxes[combinacao[1]].innerHTML === "O" &&
+        boxes[combinacao[1]].innerHTML !== "" &&
         boxes[combinacao[1]].innerHTML === boxes[combinacao[2]].innerHTML
       ) {
         numberRandom = combinacao[0];
-      } else {
       }
     });
   }
