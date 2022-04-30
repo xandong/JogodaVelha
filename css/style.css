@@ -60,7 +60,7 @@ nav {
 }
 nav > a {
   font-weight: bold;
-  background-color: white;
+  background-color: whitesmoke;
   color: blue;
   text-decoration: none;
   margin-left: 5px;
@@ -71,13 +71,17 @@ nav > a {
   transition-duration: 0.6s;
   transition-delay: 0.1s;
 }
+.active {
+  background-color: blue;
+  color: white;
+}
 nav > a:hover {
   background-color: blue;
   color: white;
   padding: 5px 2% 5px 2%;
   box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.2);
   transition-duration: 0.3s;
-  transition-delay: 0.3s;
+  transition-delay: 0.2s;
 }
 main {
   background-color: blue;
@@ -86,7 +90,7 @@ main {
   max-width: 95%;
   margin: 0 auto;
   border-radius: 20px;
-  transition-duration: 5s;
+  transition-duration: 2s;
   transition-delay: 0.2s;
   border-top: 10px solid blue;
   border-bottom: 10px solid blue;
@@ -140,7 +144,7 @@ h3 {
   text-decoration: none;
   padding: 5px 10px 5px 10px;
   border-radius: 20px;
-  transition-duration: 1.5s;
+  transition-duration: 1s;
   transition-delay: 0.3s;
 }
 #start:hover {
@@ -148,7 +152,6 @@ h3 {
   color: white;
   padding: 8px 15px 8px 15px;
   border-radius: 30px;
-  transition-duration: 0.2s;
 }
 
 footer {
