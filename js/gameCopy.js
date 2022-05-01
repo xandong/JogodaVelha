@@ -2,7 +2,6 @@ const boxes = document.querySelectorAll(".div-in");
 const getPlayer = document.getElementById("player");
 
 let isPlayer = true,
-  isBot = false,
   haveWinner = false,
   round = 0,
   player = "X",
@@ -19,10 +18,10 @@ let isPlayer = true,
   ];
 
 function game() {
-  round++;
-  if (haveWinner || isBot) return;
+  if (haveWinner) return;
   let box = event.currentTarget;
   validationsPlayer(box);
+  round++;
 }
 
 async function validationsPlayer(box) {
@@ -32,70 +31,41 @@ async function validationsPlayer(box) {
       getPlayer.innerHTML = `<strong>Robô 🤖<strong>`;
       validationsWinner("Você ganhou!");
       if (!haveWinner) {
-        isBot = true;
         setTimeout(() => {
           botsTurn();
           getPlayer.innerHTML = `<strong>Sua vez!<strong>`;
           validationsWinner("O robô ganhou!");
         }, 1500);
-        isBot = false;
       }
     }
   }
 }
 
+function conditionCombinationBot() {}
+
 function botsTurn() {
   round++;
-
   let numberRandom = parseInt(Math.random() * 9);
-  let numberAux = numberRandom;
   if (round > 2) {
     combinacoes.forEach((combinacao) => {
-      if (true) {
-        if (
-          boxes[combinacao[0]].innerHTML === "X" &&
-          boxes[combinacao[0]].innerHTML === boxes[combinacao[1]].innerHTML &&
-          numberRandom === numberAux
-        ) {
-          if (boxes[combinacao[2]].innerHTML === "")
-            numberRandom = combinacao[2];
-        } else if (
-          boxes[combinacao[0]].innerHTML === "X" &&
-          boxes[combinacao[0]].innerHTML === boxes[combinacao[2]].innerHTML &&
-          numberRandom === numberAux
-        ) {
-          if (boxes[combinacao[1]].innerHTML === "")
-            numberRandom = combinacao[1];
-        } else if (
-          boxes[combinacao[1]].innerHTML === "X" &&
-          boxes[combinacao[1]].innerHTML === boxes[combinacao[2]].innerHTML &&
-          numberRandom === numberAux
-        ) {
-          if (boxes[combinacao[0]].innerHTML === "")
-            numberRandom = combinacao[0];
-        }
-        numberAux = numberRandom;
-      }
-      if (true) {
-        if (
-          boxes[combinacao[0]].innerHTML === "O" &&
-          boxes[combinacao[0]].innerHTML === boxes[combinacao[1]].innerHTML &&
-          numberRandom === numberAux
-        ) {
-          numberRandom = combinacao[2];
-        } else if (
-          boxes[combinacao[0]].innerHTML === "O" &&
-          boxes[combinacao[0]].innerHTML === boxes[combinacao[2]].innerHTML &&
-          numberRandom === numberAux
-        ) {
-          numberRandom = combinacao[1];
-        } else if (
-          boxes[combinacao[1]].innerHTML === "O" &&
-          boxes[combinacao[1]].innerHTML === boxes[combinacao[2]].innerHTML &&
-          numberRandom === numberAux
-        ) {
-          numberRandom = combinacao[0];
-        }
+      if (
+        boxes[combinacao[0]].innerHTML !== "" &&
+        boxes[combinacao[0]].innerHTML === boxes[combinacao[1]].innerHTML
+      ) {
+        numberRandom = combinacao[2];
+        if (combinacao[2] === "") return numberRandom;
+      } else if (
+        boxes[combinacao[0]].innerHTML !== "" &&
+        boxes[combinacao[0]].innerHTML === boxes[combinacao[2]].innerHTML
+      ) {
+        numberRandom = combinacao[1];
+        if (combinacao[1] === "") return numberRandom;
+      } else if (
+        boxes[combinacao[1]].innerHTML !== "" &&
+        boxes[combinacao[1]].innerHTML === boxes[combinacao[2]].innerHTML
+      ) {
+        numberRandom = combinacao[0];
+        if (combinacao[0] === "") return numberRandom;
       }
     });
   }
