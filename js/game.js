@@ -20,7 +20,7 @@ let isPlayer = true,
 
 function game() {
   round++;
-  if (haveWinner || isBot) return;
+  if (haveWinner || !isPlayer) return;
   let box = event.currentTarget;
   validationsPlayer(box);
 }
@@ -32,13 +32,13 @@ async function validationsPlayer(box) {
       getPlayer.innerHTML = `<strong>Robô 🤖<strong>`;
       validationsWinner("Você ganhou!");
       if (!haveWinner) {
-        isBot = true;
+        isPlayer = false;
         setTimeout(() => {
           botsTurn();
           getPlayer.innerHTML = `<strong>Sua vez!<strong>`;
           validationsWinner("O robô ganhou!");
+          isPlayer = true;
         }, 1500);
-        isBot = false;
       }
     }
   }
